@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { X } from "lucide-react"
 import Input from './Input'
 
-function AddPatient({ close,onAdd }) {
+function AddPatient({ close, onAdd }) {
     const [form, setForm] = useState({
         name: "",
         age: "",
@@ -12,7 +12,7 @@ function AddPatient({ close,onAdd }) {
     });
     const handleSubmit = (event) => {
         event.preventDefault()
-        onAdd({...form, id: Date.now()});
+        onAdd({ ...form, id: Date.now() });
 
     }
 
@@ -39,6 +39,7 @@ function AddPatient({ close,onAdd }) {
                         type="text"
                         value={form.name}
                         placeholder="Enter patient name"
+                        autoFocuss="true"
                         onChange={handleOnchange("name")}
                     />
                     <Input

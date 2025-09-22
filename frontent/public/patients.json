@@ -24,8 +24,16 @@
     "notes": "Allergic to penicillin"
   },
   {
-    "id": 2,
-    "name": "Rohit Shah",
+    "id": 4,
+    "name": "Sunil Shah",
+    "age": 42,
+    "contact": "+91-9123456780",
+    "gender": "Male",
+    "notes": "Hypertension"
+  },
+  {
+    "id": 5,
+    "name": "Sunil Shah",
     "age": 42,
     "contact": "+91-9123456780",
     "gender": "Male",
