@@ -22,5 +22,13 @@
     "contact": "+91-9988776655",
     "gender": "Female",
     "notes": "Allergic to penicillin"
+  },
+  {
+    "id": 2,
+    "name": "Rohit Shah",
+    "age": 42,
+    "contact": "+91-9123456780",
+    "gender": "Male",
+    "notes": "Hypertension"
   }
 ]
