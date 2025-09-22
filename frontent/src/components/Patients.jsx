@@ -13,9 +13,9 @@ function Patients() {
 
 
     // search patients
- const filteredPatients = patients.filter(patient =>
-    patient.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+    const filteredPatients = patients.filter(patient =>
+        patient.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
 
 
@@ -60,30 +60,24 @@ function Patients() {
                     />
                 </div>
 
-                {/* const filteredPatients = patients.filter(patient =>
-  patient.name.toLowerCase().includes(searchQuery.toLowerCase())
-); */}
+                <div className='grid grid-cols-1 md:grid-cols-4 gap-5 sm:grid-cols-2'>
+                    {filteredPatients.length === 0 && !loading && (
+                        <p className="col-span-full text-center text-gray-500">No patients found.</p>
+                    )}
 
-<div className='grid grid-cols-1 md:grid-cols-4 gap-5 sm:grid-cols-2'>
-  {filteredPatients.length === 0 && !loading && (
-    <p className="col-span-full text-center text-gray-500">No patients found.</p>
-  )}
-
-  {filteredPatients.map((patient) => (
-    <div key={patient.id} className='border rounded-lg bg-gray-100 p-2 hover:shadow-lg hover:scale-105 transition-all'>
-      <h1>Name: {patient.name}</h1>
-      <p>Age: {patient.age}</p>
-      <p>Gender: {patient.gender}</p>
-      <p>Mob: {patient.contact}</p>
-      <p className='text-end cursor-pointer text-gray-500 hover:text-gray-800' 
-         onClick={() => navigate(`/patient/${patient.id}`, { state: { patient } })}>
-        Details
-      </p>
-    </div>
-  ))}
-</div>
-
-                    
+                    {filteredPatients.map((patient) => (
+                        <div key={patient.id} className='border rounded-lg bg-gray-100 p-2 hover:shadow-lg hover:scale-105 transition-all'>
+                            <h1>Name: {patient.name}</h1>
+                            <p>Age: {patient.age}</p>
+                            <p>Gender: {patient.gender}</p>
+                            <p>Mob: {patient.contact}</p>
+                            <p className='text-end cursor-pointer text-gray-500 hover:text-gray-800'
+                                onClick={() => navigate(`/patient/${patient.id}`, { state: { patient } })}>
+                                Details
+                            </p>
+                        </div>
+                    ))}
+                </div>
 
                 {loading && <p className="col-span-full text-center text-gray-500">Loading patients...</p>}
                 {error && <p className="col-span-full text-center text-red-500">{error}</p>}
