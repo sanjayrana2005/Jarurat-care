@@ -2,17 +2,18 @@ import React, { useState } from 'react'
 import { X } from "lucide-react"
 import Input from './Input'
 
-function AddPatient({ close }) {
+function AddPatient({ close,onAdd }) {
     const [form, setForm] = useState({
         name: "",
         age: "",
         gender: "",
-        mobile: "",
+        contact: "",
         notes: "",
     });
     const handleSubmit = (event) => {
         event.preventDefault()
-        
+        onAdd({...form, id: Date.now()});
+
     }
 
     const handleOnchange = (field) => (event) => {
@@ -56,9 +57,9 @@ function AddPatient({ close }) {
 
                     <Input
                         type="text"
-                        value={form.mobile}
+                        value={form.contact}
                         placeholder="Enter patient mobile"
-                        onChange={handleOnchange("mobile")}
+                        onChange={handleOnchange("contact")}
                     />
 
                     <Input
@@ -68,7 +69,13 @@ function AddPatient({ close }) {
                         onChange={handleOnchange("notes")}
                     />
 
-                    <button className='bg-gray-600 py-3 rounded-full hover:bg-gray-700 cursor-pointer transition-all'>Add</button>
+                    <div className='flex gap-3 justify-between'>
+                        <button
+                            onClick={close}
+                            className='bg-red-500 text-white font-medium text-xl py-2
+                        rounded-lg hover:bg-red-600 cursor-pointer transition-all w-1/2'>Cancel</button>
+                        <button className='bg-green-500 text-white font-medium text-xl py-2 rounded-lg hover:bg-green-600 cursor-pointer transition-all w-1/2'>Add</button>
+                    </div>
                 </form>
             </div>
         </section>
