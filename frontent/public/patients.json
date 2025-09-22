@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Asha Verma",
+    "age": 29,
+    "contact": "+91-9876543210",
+    "gender": "Female",
+    "notes": "Diabetes Type II"
+  },
+  {
+    "id": 2,
+    "name": "Rohit Shah",
+    "age": 42,
+    "contact": "+91-9123456780",
+    "gender": "Male",
+    "notes": "Hypertension"
+  },
+  {
+    "id": 3,
+    "name": "Meera Patel",
+    "age": 35,
+    "contact": "+91-9988776655",
+    "gender": "Female",
+    "notes": "Allergic to penicillin"
+  }
+]
